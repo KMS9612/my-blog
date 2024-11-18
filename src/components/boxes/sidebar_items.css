@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .sidebar_item {
+    @apply w-full h-[50px] cursor-pointer font-semibold rounded-lg sidebar-item-hover;
+  }
+
+  .sidebar-item-hover {
+    @apply hover:bg-opacity-10 hover:bg-sideItemHoverBg hover:text-sideItemHoverTxt transition-all ease-in-out duration-300;
+  }
+}

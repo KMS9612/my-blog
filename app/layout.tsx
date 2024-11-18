@@ -1,17 +1,11 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
+import { Sour_Gummy } from "next/font/google";
 import "./globals.css";
 import SideBar from "@/src/layouts/sidebar/sidebar";
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
+const sourGummy = Sour_Gummy({
+  weight: ["400", "500", "600", "700"],
+  subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
@@ -27,9 +21,9 @@ export default function RootLayout({
   return (
     <html lang="ko">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased w-screen h-screen grid grid-cols-[200px_1fr] grid-rows-1`}
+        className={`${sourGummy.className} antialiased w-screen h-screen grid grid-cols-[300px_1fr] grid-rows-1`}
       >
-        <div className="h-full">
+        <div className="w-full h-full">
           <SideBar />
         </div>
         <div className="h-full">{children}</div>

@@ -5,7 +5,9 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
-  --side-main-bg: #2c2c2c;
+  --side-main-bg: rgba(33, 38, 45, 1);
+  --side-item-h-bg: rgba(59, 143, 238, 0.2);
+  --side-item-h-text: rgba(59, 143, 238, 0.7);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -13,6 +15,8 @@
     --background: #0a0a0a;
     --foreground: #ededed;
     --side-main-bg: #2c2c2c;
+    --side-item-h-bg: rgba(59, 143, 238, 1);
+    --side-item-h-text: #3b8fee;
   }
 }
 
@@ -23,8 +27,17 @@ body {
 }
 
 @layer components {
-  .sidebar-bg {
-    @apply bg-side-main-bg;
+  /* 정가운데 정렬 */
+  .place-center {
+    @apply flex justify-center items-center;
+  }
+  /* 수평 가운데 정렬 */
+  .place-center-row {
+    @apply flex items-center;
+  }
+  /* 수평 가운데 정렬 */
+  .place-center-col {
+    @apply flex justify-center;
   }
 }
 
